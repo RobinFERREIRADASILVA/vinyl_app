@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "914245608868",
+    "project_id": "vinyl-app-d27bf",
+    "storage_bucket": "vinyl-app-d27bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914245608868:android:bc1cbab8577ccd63118d31",
+        "android_client_info": {
+          "package_name": "com.example.vinylapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "914245608868-3skqj7ncnrcuutflvnklm3f4debcjsdj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQYdwrotr3gycVEU-7Jf5u4NlI2EOTQLc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "914245608868-3skqj7ncnrcuutflvnklm3f4debcjsdj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
