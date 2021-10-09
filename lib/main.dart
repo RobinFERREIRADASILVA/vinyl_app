@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vinyl_app/components/header.dart';
+import 'package:vinyl_app/views/signup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +17,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Vinyl App',
-      home: HomePage(),
+      initialRoute: '/',
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        '/': (context) => HomePage(),
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        '/signup': (context) => SignUp(),
+      },
     );
   }
 }
@@ -43,32 +51,6 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         body: Column(
       children: [
-        Stack(
-          children: [
-            Container(
-                height: MediaQuery.of(context).size.height / 2,
-                decoration: BoxDecoration(
-                    color: Colors.black,
-                    border: Border(bottom: BorderSide.none))),
-            ShaderMask(
-              shaderCallback: (rect) {
-                return LinearGradient(
-                  begin: Alignment.center,
-                  end: Alignment.bottomCenter,
-                  colors: [Colors.black, Colors.transparent],
-                ).createShader(
-                    Rect.fromLTRB(0, 0, rect.width, rect.height - 10));
-              },
-              blendMode: BlendMode.dstIn,
-              child: Image.network(
-                'https://static.actu.fr/uploads/2019/01/deejay-1839788_1920-960x640.jpg',
-                height: MediaQuery.of(context).size.height / 2.2,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ],
-        ),
-
         // Container(
         //   height: MediaQuery.of(context).size.height / 2.2,
         //   color: Colors.black,
@@ -78,6 +60,7 @@ class _HomePageState extends State<HomePage> {
         //     colorBlendMode: BlendMode.dstIn,
         //   ),
         // ),
+        Header(),
         Expanded(
           child: Container(
               width: MediaQuery.of(context).size.width,
@@ -103,9 +86,10 @@ class _HomePageState extends State<HomePage> {
                       child: Text('Se connecter',
                           style: GoogleFonts.robotoCondensed(
                               color: Colors.black, fontSize: 16))),
-                              sioze
                   ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/signup');
+                      },
                       style: ElevatedButton.styleFrom(
                           onPrimary: Colors.indigo,
                           elevation: 4,
